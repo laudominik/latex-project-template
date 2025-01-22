@@ -1,0 +1,19 @@
+name: Compile document
+
+on:
+  push:
+
+jobs:
+  Compile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch latex
+        run: sudo apt update && sudo apt install texlive latexmk -y
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Run
+        run: make
+      - name: Save pdf
+        uses: actions/upload-artifact@v4
+        with:
+          path: build/ 
