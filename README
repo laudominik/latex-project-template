@@ -18,3 +18,6 @@ To use in your project just:
 * Reinitialize repo
     $ rm -Rf .git
     $ git init
+
+Or just use the provided script:
+    $ curl -sL https://raw.githubusercontent.com/laudominik/latex-project-template/refs/heads/main/scripts/create_project.sh | bash -s example
