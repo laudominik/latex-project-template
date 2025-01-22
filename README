@@ -1,0 +1,9 @@
+# Latex template
+Simple Latex template with CI/CD.
+
+Usage:
+
+Just run
+$ make
+Cleanup with
+$ make clean
