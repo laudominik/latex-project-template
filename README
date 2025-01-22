@@ -1,9 +1,20 @@
 # Latex template
 Simple Latex template with CI/CD.
 
-Usage:
+Requirements:
+* pdflatex
+* latexmk
 
-Just run
-$ make
-Cleanup with
-$ make clean
+Usage:
+* Just run
+    $ make
+* Cleanup with
+    $ make clean
+
+To use in your project just:
+* Clone
+    $ git clone git@github.com:laudominik/latex-project-template.git example
+    $ cd example
+* Reinitialize repo
+    $ rm -Rf .git
+    $ git init
