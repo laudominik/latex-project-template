@@ -1,12 +1,22 @@
 SHELL := /bin/bash
 OUTPUT_DIR = build
 BIB = bibtex
-TEX = latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make
+PDF_TEX = latexmk  -use-make -pdf -pdflatex="pdflatex -interaction=nonstopmode"
+HTML_TEX = make4ht
 
-.PHONY: clean sc
+.PHONY: clean sc pdf html all
+
+all: pdf html
+
+pdf: ${OUTPUT_DIR}/main.pdf
+
+html: ${OUTPUT_DIR}/main.html
 
 ${OUTPUT_DIR}/main.pdf: main.tex ${OUTPUT_DIR} sc
-	${TEX} --output-directory=${OUTPUT_DIR} main.tex 
+	${PDF_TEX} --output-directory=${OUTPUT_DIR} main.tex 
+
+${OUTPUT_DIR}/main.html: main.tex ${OUTPUT_DIR} sc
+	${HTML_TEX} -d ${OUTPUT_DIR} -B ${OUTPUT_DIR} main.tex 
 
 ${OUTPUT_DIR}:
 	mkdir -p ${OUTPUT_DIR}

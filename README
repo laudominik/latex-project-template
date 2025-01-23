@@ -2,7 +2,8 @@
 Simple Latex template with CI/CD.
 
 Requirements:
-* pdflatex
+* pdflatex (for pdf output)
+* make4ht (for html output)
 * latexmk
 
 Usage:
